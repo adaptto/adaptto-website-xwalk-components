@@ -47,7 +47,7 @@
             <jackrabbit-filter>
               <options>
                 <validRoots>
-                  /apps/to.adapt.xwalk.components
+                  /apps/adaptto-xwalk
                 </validRoots>
               </options>
             </jackrabbit-filter>
