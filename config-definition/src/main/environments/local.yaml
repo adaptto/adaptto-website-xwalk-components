@@ -1,0 +1,31 @@
+# AEM configuration for local development environment
+
+nodes:
+
+- node: aem-author
+  roles:
+  - role: to.adapt.xwalk.components-aem-cms
+    variant: aem-author
+  config:
+    replication.author.publishTargets:
+    - name: publish
+      url: ${maven::sling.publish.url}
+      transportUser: admin
+      transportPassword: admin
+
+- node: aem-publish
+  roles:
+  - role: to.adapt.xwalk.components-aem-cms
+    variant: aem-publish
+
+
+config:
+  contentPackage.group: adaptto-xwalk
+
+  quickstart:
+    # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
+    enableDavEx: true
+
+  # Not used for AEM cloud
+  cloudManager.target:
+  - none

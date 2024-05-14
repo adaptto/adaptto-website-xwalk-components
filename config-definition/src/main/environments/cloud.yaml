@@ -1,0 +1,22 @@
+# AEM configuration for AEM Cloud Service (DEV/STAGE/PROD)
+
+nodes:
+
+- node: aem-author
+  roles:
+  - role: to.adapt.xwalk.components-aem-cms
+    variant: aem-author
+
+- node: aem-publish
+  roles:
+  - role: to.adapt.xwalk.components-aem-cms
+    variant: aem-publish
+
+
+config:
+  contentPackage.group: adaptto-xwalk
+
+  # Replication configuration not required for AEM cloud service
+  replication:
+    author.generatePackage: false
+    publish.generatePackage: false
