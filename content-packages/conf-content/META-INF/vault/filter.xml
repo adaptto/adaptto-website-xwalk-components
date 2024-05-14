@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/to.adapt.xwalk.components">
+        <include pattern="/conf/to.adapt.xwalk.components"/>
+        <include pattern="/conf/to.adapt.xwalk.components/rep:policy(/.*)?"/>
+    </filter>
+    <filter root="/conf/to.adapt.xwalk.components/settings/wcm">
+        <exclude pattern="^.*/dam:thumbnails(/.*)?$"/>
+    </filter>
+</workspaceFilter>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:conf="/conf/to.adapt.xwalk.components"
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:template="/conf/to.adapt.xwalk.components/settings/wcm/templates/homepage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="en"
+        sling:resourceType="to.adapt.xwalk.components/core/components/global/page"
+        navTitle="HOME"
+        pageTitle="to.adapt.xwalk.components Sample Site"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        cq:lastReplicated="{Date}2024-05-14T00:00:00.000+02:00"
+        cq:lastReplicationAction="Activate">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="to.adapt.xwalk.components/core/components/container/container">
+            <content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="to.adapt.xwalk.components/core/components/container/container">
+                <customcarousel
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="to.adapt.xwalk.components/core/components/content/customcarousel">
+                    <slides jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="to.adapt.xwalk.components/core/components/content/image"
+                            fileReference="/content/dam/to.adapt.xwalk.components/chicago.jpg"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="to.adapt.xwalk.components/core/components/content/image"
+                            fileReference="/content/dam/to.adapt.xwalk.components/nature.jpg"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="to.adapt.xwalk.components/core/components/content/image"
+                            fileReference="/content/dam/to.adapt.xwalk.components/prague.jpg"/>
+                    </slides>
+                </customcarousel>
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Hello to.adapt.xwalk.components"
+                    sling:resourceType="to.adapt.xwalk.components/core/components/content/title"
+                    type="h1"/>
+                <text
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="to.adapt.xwalk.components/core/components/content/text"
+                    text="&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu mi, commodo ut interdum quis, aliquet sed sapien. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sit amet venenatis velit, sit amet pulvinar dolor. Donec in risus enim. Nullam ultricies dui posuere blandit euismod. Aenean varius porta aliquet. Mauris sed tempor massa, malesuada rhoncus tortor. Vestibulum vitae viverra enim. Duis feugiat mollis tortor, a efficitur massa fringilla ut.&lt;/p&gt;"
+                    textIsRich="true"/>
+            </content>
+        </root>
+    </jcr:content>
+</jcr:root>

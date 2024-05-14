@@ -1,0 +1,69 @@
+# Project-specific AEM configuration
+
+# Inherit default AEM functionality from "AEM Definitions", see http://devops.wcm.io/conga/definitions/aem/
+inherits:
+- role: aem-cms
+
+variants:
+- variant: aem-author
+- variant: aem-publish
+
+templateDir: to.adapt.xwalk.components-aem-cms
+
+files:
+
+
+# AEM OSGi System Configuration
+- file: to.adapt.xwalk.components-aem-cms-config.osgiconfig.json
+  dir: packages
+  template: to.adapt.xwalk.components-aem-cms-config.osgiconfig.json.hbs
+  validators:
+  - none  # allow trailing commas in JSON picked up by post processor
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: to.adapt.xwalk.components-aem-cms-config
+      rootPath: /apps/to.adapt.xwalk.components/config
+      filters:
+      - filter: /apps/to.adapt.xwalk.components
+        rules:
+        - rule: include
+          pattern: /apps/to.adapt.xwalk.components/config(\..*)?(/.*)?
+        - rule: exclude
+          pattern: /apps/to.adapt.xwalk.components/config/rewriter(/.*)?
+
+# Application bundles andpackages
+- url: mvn:to.adapt.xwalk/to.adapt.xwalk.components.core
+  dir: bundles
+- url: mvn:to.adapt.xwalk/to.adapt.xwalk.components.ui.apps//zip
+  dir: packages
+
+# Application conf content package
+- url: mvn:to.adapt.xwalk/to.adapt.xwalk.components.conf-content//zip
+  dir: packages
+  condition: ${app.confContent}
+
+# Application sample content package
+- url: mvn:to.adapt.xwalk/to.adapt.xwalk.components.sample-content//zip
+  dir: packages
+  condition: ${app.sampleContent}
+
+
+# Defines configuration parameters and default values
+config:
+  contentPackage:
+    group: adaptto-xwalk
+    version: ${version}
+
+  aem:
+    # Disable user tracking in author environment
+    disableAuthorUsageStatisticsCollection: false
+
+  app:
+    confContent: true
+    sampleContent: false
+
+  # Log levels
+  log:
+    projectSpecificLogLevel: warn
