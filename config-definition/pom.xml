@@ -40,20 +40,6 @@
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>to.adapt.xwalk</groupId>
-      <artifactId>to.adapt.xwalk.components.conf-content</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>to.adapt.xwalk</groupId>
-      <artifactId>to.adapt.xwalk.components.sample-content</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
 
   </dependencies>
 

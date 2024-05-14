@@ -50,7 +50,7 @@ public final class AppAemContext {
   private static final AemContextCallback SETUP_CALLBACK = new AemContextCallback() {
     @Override
     public void execute(@NotNull AemContext context) throws PersistenceException, IOException {
-
+      // add custom set up rules here
     }
   };
 

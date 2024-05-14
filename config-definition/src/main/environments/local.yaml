@@ -22,18 +22,6 @@ nodes:
 config:
   contentPackage.group: adaptto-xwalk
 
-  aem:
-    # Disable user tracking in author environment
-    disableAuthorUsageStatisticsCollection: true
-
-  app:
-    # Default log level for application code
-    logLevel: info
-    # Whether to deploy conf content with editable template definitions
-    confContent: true
-    # Whether to deploy sample content
-    sampleContent: true
-
   quickstart:
     # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
     enableDavEx: true
