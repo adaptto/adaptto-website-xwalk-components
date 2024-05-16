@@ -1,0 +1,11 @@
+<div data-sly-use.block="to.adapt.xwalk.components.components.ImageGallery"
+     data-aue-resource="urn:aemconnection:${resource.path}"
+     data-aue-type="component"
+     data-aue-behavior="component"
+     data-aue-model="image-gallery-folder"
+     data-aue-label="Image Gallery Folder"
+     class="image-gallery">
+  <div data-sly-repeat.imageUrl="${block.imageUrls}">
+    <div><picture><img src="${imageUrl}"></picture></div>
+  </div>
+</div>
