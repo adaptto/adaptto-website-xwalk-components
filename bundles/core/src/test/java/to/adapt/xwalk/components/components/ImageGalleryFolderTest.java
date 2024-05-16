@@ -30,8 +30,7 @@ class ImageGalleryFolderTest {
   @Test
   @SuppressWarnings("null")
   void testNoAssetFolderPath() {
-    context.currentResource(context.create().resource(page, "imageGallery",
-        "sling:resourceType", "adaptto-xwalk/components/content/imageGalleryFolder"));
+    context.currentResource(context.create().resource(page, "imageGallery"));
 
     ImageGalleryFolder underTest = context.request().adaptTo(ImageGalleryFolder.class);
 
@@ -45,7 +44,6 @@ class ImageGalleryFolderTest {
     context.create().resource("/content/dam/folder");
 
     context.currentResource(context.create().resource(page, "imageGallery",
-        "sling:resourceType", "adaptto-xwalk/components/content/imageGalleryFolder",
         "assetFolderPath", "/content/dam/folder"));
 
     ImageGalleryFolder underTest = context.request().adaptTo(ImageGalleryFolder.class);
@@ -63,7 +61,6 @@ class ImageGalleryFolderTest {
     context.create().asset("/content/dam/folder/asset2.jpg", 10, 10, "image/jpeg");
 
     context.currentResource(context.create().resource(page, "imageGallery",
-        "sling:resourceType", "adaptto-xwalk/components/content/imageGalleryFolder",
         "assetFolderPath", "/content/dam/folder"));
 
     ImageGalleryFolder underTest = context.request().adaptTo(ImageGalleryFolder.class);
