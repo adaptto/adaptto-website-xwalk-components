@@ -1,7 +1,8 @@
-to.adapt.xwalk.components
+adaptTo() Website - X-Walk Experimental - Custom AEM Components
 =========================
 
-This is an AEM project set up with the [wcm.io Maven Archetype for AEM][wcmio-maven-archetype-aem].
+Custom AEM templates and AEM components to be used in the adaptTo() Website Edge Delivery Services Crosswalk application (Experimental):
+https://github.com/adaptto/adaptto-website-xwalk
 
 
 ### Build and deploy
