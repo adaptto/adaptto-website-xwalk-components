@@ -22,6 +22,10 @@ nodes:
 config:
   contentPackage.group: adaptto-xwalk
 
+  app:
+    # Enable local development configuration
+    localDevConfig: true
+
   quickstart:
     # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
     enableDavEx: true

@@ -19,9 +19,26 @@ files:
 - url: mvn:to.adapt.xwalk/to.adapt.xwalk.components.ui.apps//zip
   dir: packages
 
+# AEM OSGi System Configuration
+- file: local-dev-config.osgiconfig.json
+  dir: packages
+  template: local-dev-config.osgiconfig.json.hbs
+  condition: ${app.localDevConfig}
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: local-dev-config
+      rootPath: /apps/local-dev-config/config
+      filters:
+      - filter: /apps/local-dev-config/config
+
+
 
 # Defines configuration parameters and default values
 config:
   contentPackage:
     group: adaptto-xwalk
     version: ${version}
+  app:
+    localDevConfig: false

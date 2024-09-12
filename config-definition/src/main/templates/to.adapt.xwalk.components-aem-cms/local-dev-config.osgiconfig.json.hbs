@@ -1,0 +1,22 @@
+{
+  "configurations": {
+
+    {{!-- Local development with Univesal Editor --}}
+    "com.day.crx.security.token.impl.impl.TokenAuthenticationHandler": {
+      "token.required.attr": "none",
+      {{!-- Switch from 'Lax' to 'None' --}}
+      "token.samesite.cookie.attr": "None"
+    },
+    "org.apache.sling.engine.impl.SlingMainServlet": {
+      "sling.max.calls": 1500,
+      {{!-- Remove entry 'X-FRAME-OPTIONS: SAMEORIGIN ' --}}
+      "sling.additional.response.headers": ["X-Content-Type-Options=nosniff"]
+    },
+    "com.adobe.aem.wcm.franklin.internal.UniversalEditorSettings": {
+      "plugin": "$[env:AEM_XWALK_AUE_PLUGIN;default=xwalk]",
+      {{!-- Add endpoint https://localhost:8000 as fallback --}}
+      "endpoint": "$[env:AEM_XWALK_AUE_ENDPOINT;default=https://localhost:8000]"
+    }
+
+  }
+}
