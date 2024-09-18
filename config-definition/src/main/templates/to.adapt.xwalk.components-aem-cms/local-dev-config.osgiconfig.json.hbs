@@ -1,5 +1,5 @@
 {
-  "configurations": {
+  "configurations:author": {
 
     {{!-- Local development with Univesal Editor --}}
     "com.day.crx.security.token.impl.impl.TokenAuthenticationHandler": {
@@ -16,6 +16,23 @@
       "plugin": "$[env:AEM_XWALK_AUE_PLUGIN;default=xwalk]",
       {{!-- Add endpoint https://localhost:8000 as fallback --}}
       "endpoint": "$[env:AEM_XWALK_AUE_ENDPOINT;default=https://localhost:8000]"
+    },
+    "com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl": {
+      "authoringUIModeService.default": "TOUCH",
+      "authoringUIModeService.editorUrl.classic": "/cf#",
+      "authoringUIModeService.editorUrl.touch": "/editor.html",
+      {{!-- Link directly to external UI domain, /ui# is not supported locally; probably replace @myenvironment with your program --}}
+      "authoringUIModeService.editorUrl.universal": "$[env:AEM_UNIVERSAL_EDITOR_PATH;default=https://experience.adobe.com/#/@myenvironment/aem/editor/canvas/]",
+      "authoringUIModeService.resourceTypes.universal": ["core/franklin/components/page/v1/page"]
+    },
+    {{!-- Switch local author URLs to HTTPs --}}
+    "com.day.cq.commons.impl.ExternalizerImpl": {
+      "externalizer.domains": [
+        "local $[env:AEM_EXTERNALIZER_LOCAL;default=https://localhost:8443]",
+        "author $[env:AEM_EXTERNALIZER_AUTHOR;default=https://localhost:8443]",
+        "publish $[env:AEM_EXTERNALIZER_PUBLISH;default=https://localhost:4503]",
+        "preview $[env:AEM_EXTERNALIZER_PREVIEW;default=https://localhost:4503]"
+      ]
     }
 
   }

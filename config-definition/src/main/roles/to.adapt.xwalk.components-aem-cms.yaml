@@ -32,6 +32,7 @@ files:
       rootPath: /apps/local-dev-config/config
       filters:
       - filter: /apps/local-dev-config/config
+      - filter: /apps/local-dev-config/config.author
 
 
 
